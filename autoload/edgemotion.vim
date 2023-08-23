@@ -48,10 +48,10 @@ function! edgemotion#move(dir) abort
 
   " Edge not found.
   if lnum == 0 || lnum == last_lnum + 1
-    return ''
+    return
   endif
 
-  return lnum . 'gg'
+  execute printf('keepjumps normal! %dgg', lnum)
 endfunction
 
 function! s:island(lnum, vcol) abort
